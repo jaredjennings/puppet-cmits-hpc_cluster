@@ -82,7 +82,7 @@ class hpc_cluster::login_node(
 # close to what we want. And no one wants an \verb!hpc_cluster::login_node!
 # that isn't running RHEL6, yet.
     if $::osfamily != 'RedHat' or $::operatingsystemrelease !~ /^6\..*/ {
-        unimplemented()
+        fail "unimplemented on ${::osfamily} ${::operatingsystemrelease}"
     }
 
 # Make DNS available on the internal network. This will include whatever is
