@@ -319,12 +319,12 @@ ${compute_nodes_host_entries_script}
 # Prepare the /srv/passwd directory for the below.
     file { '/srv/passwd':
         ensure => directory,
-        owner => root, group => 0, mode => 0644,
+        owner => root, group => 0, mode => '0644',
     }
 
 # Pass user and group information to the inside of the cluster.
     file { '/etc/cron.hourly/hpc_cluster_passwd_group':
-        owner => root, group => 0, mode => 0755,
+        owner => root, group => 0, mode => '0755',
         source => "puppet:///modules/hpc_cluster/gather.cron",
     }
 

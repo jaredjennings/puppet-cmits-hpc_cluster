@@ -61,7 +61,7 @@ class hpc_cluster::node($cluster_hostname) {
 # has built.
     file { '/opt/scyld/modulefiles/openmpi/.modulerc':
         ensure => present,
-        owner => root, group => 0, mode => 0644,
+        owner => root, group => 0, mode => '0644',
         content => "#%Module
 module-version pgi default
 ",

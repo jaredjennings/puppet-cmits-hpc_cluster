@@ -26,7 +26,7 @@ class hpc_cluster::management_node($cluster_hostname) {
   # Get user and group information from the login node and write it in
   # my passwd and group files.
   file { '/etc/cron.hourly/hpc_cluster_passwd_group':
-      owner => root, group => 0, mode => 0755,
+      owner => root, group => 0, mode => '0755',
       source => "puppet:///hpc_cluster/integrate.cron",
   }
 # At present there is no puppet on management nodes. Besides the
